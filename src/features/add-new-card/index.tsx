@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-import AddIcon from "./add-icon.svg?react";
+import styles from "./add-new-card.module.scss";
+
+import AddIcon from "~/shared/icons/add-icon.svg?react";
+import CheckIcon from "~/shared/icons/check-icon.svg?react";
+
 import { Button } from "~/shared/ui/button";
 import { ModalWindow } from "~/shared/ui/modal-window";
 import { Input } from "@headlessui/react";
@@ -35,16 +39,23 @@ export const AddNewCard: React.FC = () => {
         onClose={() => setAddMenuOpened(false)}
         title="Новая карточка"
       >
-        <Input placeholder="Название" {...register("title")} />
+        <Input className={styles.input} placeholder="Название" {...register("title")} />
         {errors.title && <p>{errors.title.message}</p>}
 
-        <Input placeholder="Описание" {...register("description")} />
+        <Input className={styles.input} placeholder="Описание" {...register("description")} />
         {errors.description && <p>{errors.description.message}</p>}
 
-        <Input placeholder="Размер (3-12)" type="number" {...register("size")} />
+        <Input
+          className={styles.input}
+          placeholder="Размер (3-12)"
+          type="number"
+          min={3}
+          max={12}
+          {...register("size")}
+        />
         {errors.size && <p>{errors.size.message}</p>}
 
-        <Button icon={<AddIcon />} onClick={handleSubmit(_handleSubmit)}>
+        <Button icon={<CheckIcon />} onClick={handleSubmit(_handleSubmit)}>
           Сохранить
         </Button>
       </ModalWindow>

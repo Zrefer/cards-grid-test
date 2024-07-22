@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from "@headlessui/react";
 import styles from "./modal.module.scss";
 
 export interface IModalWindowProps extends PropsWithChildren {
@@ -11,8 +11,9 @@ export interface IModalWindowProps extends PropsWithChildren {
 export const ModalWindow: React.FC<IModalWindowProps> = ({ title, opened, onClose, children }) => {
   return (
     <Dialog open={opened} onClose={onClose} className={styles.container}>
+      <DialogBackdrop className={styles.background} />
       <DialogPanel className={styles.panel}>
-        <DialogTitle>{title}</DialogTitle>
+        <DialogTitle className={styles.title}>{title}</DialogTitle>
         {children}
       </DialogPanel>
     </Dialog>

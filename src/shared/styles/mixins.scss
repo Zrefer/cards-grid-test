@@ -1,0 +1,7 @@
+@mixin input() {
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  display: flex;
+  padding: 16px;
+}

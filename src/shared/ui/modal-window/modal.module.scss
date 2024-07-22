@@ -1,0 +1,29 @@
+.container {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+}
+
+.title {
+  text-align: center;
+}
+
+.background {
+  background-color: black;
+  inset: 0;
+  opacity: 0.5;
+  position: fixed;
+}
+
+.panel {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-basis: 300px;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  z-index: 9999;
+}
