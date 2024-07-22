@@ -12,11 +12,11 @@ export const Card: React.FC<ICardProps> = ({ title, description, children }) => 
   return (
     <div className={styles.container}>
       <HandleIcon className={styles.icon} />
-      <div>
+      <div className={styles.info}>
         <h2>{title}</h2>
         <p>{description}</p>
-        {children}
       </div>
+      {children}
     </div>
   );
 };

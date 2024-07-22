@@ -3,3 +3,10 @@
   gap: 10px;
   grid-template-columns: repeat(12, 1fr);
 }
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+  width: 100%;
+}
