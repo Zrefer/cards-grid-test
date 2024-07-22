@@ -1,7 +1,6 @@
 import { createEvent, createStore } from "effector";
 import { v4 as uuid } from "uuid";
 import { persist } from "effector-storage/local";
-import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 
 export interface ICard {
